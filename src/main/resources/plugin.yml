@@ -1,0 +1,4 @@
+name: playerLives
+version: 1.0
+main: me.sammy.playerLives.PlayerLives
+api-version: 1.17
