@@ -20,6 +20,7 @@ public class lifeCommand implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if(commandSender instanceof Player) {
             if(s.equalsIgnoreCase("addLives")) {
+                System.out.println("addLives found");
                 Player player = Bukkit.getPlayer(strings[0]);
                 try{
                     int nowLives = data.getLives(player.getUniqueId());

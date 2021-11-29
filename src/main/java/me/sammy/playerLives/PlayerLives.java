@@ -24,7 +24,7 @@ public class PlayerLives extends JavaPlugin implements Listener {
         data.saveDefaultConfig();
         data.getConfig().createSection("PlayerLives");
         data.saveConfig();
-        Objects.requireNonNull(this.getCommand("addLives")).setExecutor(new lifeCommand(this.data));
+        Objects.requireNonNull(this.getCommand("AddCommand")).setExecutor(new lifeCommand(this.data));
         //line above gives an error
         getServer().getPluginManager().registerEvents(this, this);
         this.getServer().getPluginManager().registerEvents(this, this);
@@ -42,6 +42,7 @@ public class PlayerLives extends JavaPlugin implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
+        e.getPlayer().setPlayerListName(ChatColor.YELLOW + e.getPlayer().getName() + " ( " + data.getLives(player.getUniqueId()) + " )");
         if (!Objects.requireNonNull(this.data.getConfig().getConfigurationSection("PlayerLives")).contains(player.getUniqueId().toString())) {
             Objects.requireNonNull(data.getConfig().getConfigurationSection("PlayerLives")).set(player.getUniqueId().toString(), 5);
         }
