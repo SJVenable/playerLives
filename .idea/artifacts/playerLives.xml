@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="playerLives">
     <output-path>$PROJECT_DIR$/out/artifacts/playerLives</output-path>
     <root id="archive" name="playerLives.jar">
-      <element id="module-output" name="playerLives" />
+      <element id="module-output" name="PlayerLives" />
     </root>
   </artifact>
 </component>
