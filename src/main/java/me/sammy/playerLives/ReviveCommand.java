@@ -26,8 +26,8 @@ public class ReviveCommand implements CommandExecutor {
                     int nowLives = data.getLives(player.getUniqueId());
                     if (nowLives <= 0) {
                         Bukkit.getBanList(BanList.Type.NAME).pardon(player.getDisplayName());
+                        data.setLives(player.getUniqueId(), 1);
                     }
-                    data.setLives(player.getUniqueId(), 1);
                 } else commandSender.sendMessage("Please enter a player name");
             }
             data.saveConfig();
